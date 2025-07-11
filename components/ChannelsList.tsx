@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, Hash, User, Calendar, Copy, Check } from "lucide-react";
+import { Hash, User, Calendar, Copy, Check } from "lucide-react";
 
 interface Channel {
   id: string;

@@ -41,7 +41,7 @@ export default function CreateChannelPage() {
 
   // Fetch the channel creation fee
   const { data: creationFee, isLoading: isLoadingFee } = useReadContract({
-    address: "0xa1043eDBE1b0Ffe6C12a2b8ed5AfD7AcB2DEA396",
+    address: "0xa1043eDBE1b0Ffe6C12a2b8ed5AfD7AcB2DEA396" as `0x${string}`,
     abi: ChannelManagerABI,
     functionName: "getChannelCreationFee",
   });
@@ -63,12 +63,17 @@ export default function CreateChannelPage() {
       }
 
       await writeContract({
-        address: "0xa1043eDBE1b0Ffe6C12a2b8ed5AfD7AcB2DEA396",
+        address: "0xa1043eDBE1b0Ffe6C12a2b8ed5AfD7AcB2DEA396" as `0x${string}`,
         abi: ChannelManagerABI,
         functionName: "createChannel",
-        args: [values.name, values.description, [], values.hookAddress],
+        args: [
+          values.name,
+          values.description,
+          [],
+          values.hookAddress as `0x${string}`,
+        ],
         value: creationFee,
-      } as any);
+      });
     } catch (error) {
       console.error("Error creating channel:", error);
     }
