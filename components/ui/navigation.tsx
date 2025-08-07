@@ -41,6 +41,18 @@ export function Navigation() {
                 Hooks
               </Button>
             </Link>
+            <Link
+              href="https://github.com/davidfurlong/ecp-channel-tool"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="ghost"
+                className="text-white !hover:bg-white/10 !hover:text-white"
+              >
+                GitHub
+              </Button>
+            </Link>
           </div>
 
           <div className="flex items-center space-x-4">
