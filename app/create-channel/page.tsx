@@ -104,6 +104,15 @@ export default function CreateChannelPage() {
           <p className="text-gray-600">
             Create a new channel on the Ethereum Comments Protocol
           </p>
+          <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+            <p className="text-sm text-gray-700">
+              💡{" "}
+              <span className="font-medium">
+                Don't worry about getting everything perfect!
+              </span>{" "}
+              All fields can be edited later after your channel is created.
+            </p>
+          </div>
           {!isLoadingFee && creationFee && (
             <div className="mt-4 p-3 bg-blue-50 rounded-lg">
               <p className="text-sm text-blue-800">
