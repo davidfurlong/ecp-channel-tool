@@ -178,10 +178,10 @@ export default function CreateChannelPage() {
       const value = entry.value.trim();
 
       return createMetadataEntry(keyName, valueType, value);
-    });
+    }) as readonly { key: `0x${string}`; value: `0x${string}` }[];
 
   // Simulate the transaction to catch errors early
-  const { data: simulation, error: simError } = useSimulateContract({
+  const { error: simError } = useSimulateContract({
     address: "0xa1043eDBE1b0Ffe6C12a2b8ed5AfD7AcB2DEA396" as `0x${string}`,
     abi: ChannelManagerABI,
     functionName: "createChannel",
@@ -251,7 +251,7 @@ export default function CreateChannelPage() {
           const value = entry.value.trim();
 
           return createMetadataEntry(keyName, valueType, value);
-        });
+        }) as readonly { key: `0x${string}`; value: `0x${string}` }[];
 
       // Log the metadata for debugging
       console.log("Creating channel with:", {
