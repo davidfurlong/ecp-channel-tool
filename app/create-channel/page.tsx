@@ -317,7 +317,7 @@ export default function CreateChannelPage() {
             <p className="text-sm text-gray-700">
               💡{" "}
               <span className="font-medium">
-                Don't worry about getting everything perfect!
+                Don&apos;t worry about getting everything perfect!
               </span>{" "}
               All fields can be edited later after your channel is created.
             </p>
