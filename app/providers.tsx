@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider } from "wagmi";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
@@ -7,9 +8,10 @@ import { config } from "./config";
 
 import "@rainbow-me/rainbowkit/styles.css";
 
-const queryClient = new QueryClient();
-
 export default function Providers({ children }: { children: React.ReactNode }) {
+  // Create QueryClient inside component to ensure it's only created on the client
+  const [queryClient] = useState(() => new QueryClient());
+
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
